@@ -17,6 +17,15 @@ You can start the development server using the following command:
 
 This command will enable you to access the application in your web browser.
 
+## Running Cypress Tests
+
+To run Cypress tests, use the following command:
+
+`npx cypress open`
+
+This command will open the Cypress Test Runner, allowing you to select and run your Cypress tests interactively.
+
+
 ## Usage
 
 1. Go to the home page of the application.
