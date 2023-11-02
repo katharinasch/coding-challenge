@@ -66,14 +66,12 @@ const SearchResults = () => {
       <div className="h-[100px] flex items-center justify-center px-10 bg-white">
         <SearchBar searchData={searchData} setSearchData={setSearchData} />
       </div>
-      <div className="h-[100px] bg-lightgrey lg:px-40 px-10 font-sans py-7">
-        <h2 className="text-spacegray font-bold">
-          TOTAL RESULTS:{' '}
-          <span className="text-royalblue font-thin">{searchData.length}</span>
+      <div role="status" aria-live="polite" className="h-[100px] bg-lightgrey lg:px-40 px-10 font-sans py-7">
+        <h2 className="text-spacegray font-bold" aria-label={`Total results: ${searchData.length}`}>
+          TOTAL RESULTS: <span className="text-royalblue font-thin">{searchData.length}</span>
         </h2>
-        <h2 className="text-spacegray font-bold">
-          SEARCH TERM:{' '}
-          <span className="text-royalblue font-thin">{searchTerm}</span>
+        <h2 className="text-spacegray font-bold" aria-label={`Search term: ${searchTerm}`}>
+          SEARCH TERM: <span className="text-royalblue font-thin">{searchTerm}</span>
         </h2>
       </div>
       {searchData.length > 0 ? (

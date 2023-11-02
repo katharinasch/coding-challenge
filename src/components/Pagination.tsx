@@ -12,11 +12,11 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   setCurrentPage,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
   const handleSetCurrentPage = (page: number) => {
-    setCurrentPage(page)
-    router.push(`?page=statista&p=${page}`)
-  }
+    setCurrentPage(page);
+    router.push(`?page=statista&p=${page}`);
+  };
 
   return (
     <div className="flex justify-center mt-4 font-sans">
@@ -27,10 +27,14 @@ const Pagination: React.FC<PaginationProps> = ({
           currentPage === 1 ? 'text-gray-300' : ''
         }`}
         style={{ filter: 'drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2))' }}
+        aria-label="Previous Page"
       >
         &lt;
       </button>
-      <span className="bg-white p-2 mx-1 font-sans">
+      <span
+        className="bg-white p-2 mx-1 font-sans"
+        aria-label={`Page ${currentPage} of ${totalPages}`}
+      >
         {currentPage}/{totalPages}
       </span>
       <button
@@ -40,11 +44,13 @@ const Pagination: React.FC<PaginationProps> = ({
           currentPage === totalPages ? 'text-gray-300' : ''
         }`}
         style={{ filter: 'drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2))' }}
+        aria-label="Next Page"
       >
         &gt;
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;
+

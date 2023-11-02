@@ -21,7 +21,11 @@ const Index: React.FC = () => {
           className="lg:absolute top-10 left-40 mx-auto"
         />
       </div>
-      <div className="w-full min-h-screen flex items-center justify-center px-10 md:px-100">
+      <div
+        className="w-full min-h-screen flex items-center justify-center px-10 md:px-100"
+        role="main"
+        aria-label="Search Bar Section"
+      >
         <SearchBar searchData={searchData} setSearchData={setSearchData} />
       </div>
     </div>

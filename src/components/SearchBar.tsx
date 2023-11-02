@@ -43,7 +43,7 @@ const SearchBar = ({
   }
 
   return (
-    <>
+    <form onSubmit={handleSearch} className="flex">
       <label htmlFor="search-bar" className="sr-only">
         Search statista
       </label>
@@ -58,9 +58,9 @@ const SearchBar = ({
         placeholder="Find statistics, forecasts and reports"
       />
       <button
-        onClick={handleSearch}
         type="submit"
         className="h-14 md:w-[200px] rounded-r-md bg-skyblue border-2 border-skyblue text-white font-bold py-2 px-4 focus:outline-none flex items-center justify-center"
+        aria-label="Search"
       >
         <span className="hidden md:inline mr-2 font-sans">Statista search</span>
         <svg
@@ -69,6 +69,8 @@ const SearchBar = ({
           viewBox="0 0 14 14"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Search Icon"
         >
           <path
             fillRule="evenodd"
@@ -78,8 +80,8 @@ const SearchBar = ({
           />
         </svg>
       </button>
-    </>
-  )
-}
+    </form>
+  );
+};
 
 export default SearchBar
